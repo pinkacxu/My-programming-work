@@ -1,0 +1,156 @@
+<html>
+        <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<head>
+    <style>
+        @font-face{
+        font-family:fontjp;
+        src:url('image/DFRULA5.TTF');}
+        body{ font-family:fontjp;
+            background-size: cover;
+          text-align:center;
+            overflow:hidden;
+            background-attachment: fixed;
+            background:url(image/loginbg.jpg) no-repeat top center;
+            background-size:100% 100%;
+            }
+        
+            form{
+    width:500px;
+    height:500px;
+    background-image:url('image/2.jpg');
+    background-size:500px 300px;
+    position:absolute;
+    left:200px;
+    top:200px;
+    text-align: center; 
+    
+  }
+        </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    
+<script type="text/javascript">
+var c1=0;
+var c2=2;
+
+  function checkname(obj){
+    var username = obj;
+    var checkn = document.getElementById("checkn");  
+            if(username.trim().length==0){
+              checkn.innerHTML = "ユーザーネームは空栏にできません";  
+                  obj.focus();
+            }else{
+              checkn.innerHTML = "";  
+            }
+        }
+
+
+        function checkpass(obj){
+    var password = obj;
+    var checkp= document.getElementById("checkp");  
+            if(password.trim().length==0){
+              checkp.innerHTML = "PASSWORDは空栏にできません";  
+                  obj.focus();
+            }else{
+              checkp.innerHTML = "";  
+            }
+        }
+
+
+
+function compare(){
+  var pwd1 = document.getElementById("1password").value;
+    var pwd2 = document.getElementById("2password").value;
+
+if(pwd1 == pwd2)
+     {
+        document.getElementById("pw").innerHTML="<font color='green'>PASSWORD安全</font>";
+        return c2=1;
+     }
+else {
+        document.getElementById("pw").innerHTML="<font color='red'>PASSWORDの二回入力は同じくない</font>";
+        
+        
+     }
+}
+
+
+
+   $(function(){
+ 
+ $("#username").blur(function(){
+ 
+  $.ajax({
+    type:"POST",
+    url:"checkname.php",
+   data:"user="+$("#username").val(), 
+             beforeSend:function(msg) {                           
+
+                     $("#message").text("CHECKING..."); 
+ },
+
+
+ success:function(msg){                  
+         if(msg==1){                       
+  $("#message").html("ユーザーが存在しています、更换しなさい");
+  
+ }else if(msg==0){                    
+ 
+   $("#message").html("ユーザー名はまだ使っていません、使えます");
+   return c1=1;}
+   
+   
+ 
+ }
+
+}) 
+
+}) 
+
+})
+function succ(){
+if (c1==c2){document.getElementById("res").setAttribute("type", "submit");}}
+ </script> 
+</head>
+
+<body>
+  <br>
+    <div class="container" ><h1>新ADMIN登録</h1></div>
+    <div class="navbar navbar-inverse">
+        <div class="navnavbar-nav">
+          
+<form action="register2.php" method="post" id="myform">
+  <ul class="navnavbar-nav"><li>
+  <div style="">
+    <br>
+    <li style="margin:0 auto;width:250px;height:50px;border:1px solid">
+  ユーザーNAME:<input type="text" id="username"name="cname" onblur="checkname(this.value);"    ></li>
+  <br>
+  <span id="checkn" style="color: red "></span>
+  <div id="message"></div></li>
+    <br><br>
+    <li style="margin:0 auto;width:250px;height:50px;border:1px solid">
+  PASSWORD:<input  type="password" id="1password" name="cpassword" onblur="checkpass(this.value);"     placeholder="passowrd設置">
+   <br><br><span id="checkp" style="color: red "></span><br><br>
+  </li><br><br><br><br>
+  <li style="margin:0 auto;width:250px;height:50px;border:1px solid">もう一度 PASSWORD:<input type="password" id="2password" name="rpassword"  onkeyup="compare();" placeholder="passowrd確認"><span id="pw"><br><br></span>
+    <br><br><span id="checkrp"><br><br></span><br><br></li>
+    
+  <br><br><br>
+  <div style="margin:0 auto;width:250px;height:50px;border:1px solid #F00">
+    <li>
+  NECKNAME:<input type="text" id="Uname"name="Uname">
+  </div>
+  <br>
+  <span id="checkn" style="color: red "></span>
+  <div id="message"></div></li>
+  <div>
+  <input type="button" value="REGISTER　GO~" id="res"   onclick="succ();">
+</div>
+</div></ul>
+  </form>
+</div></div></div>
+</body>
+
+</html>

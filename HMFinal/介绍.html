@@ -1,0 +1,105 @@
+
+
+            
+        
+       
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+
+        <html> 
+            <head> 
+                <meta charset="utf-8">
+               
+                <style> 
+                .black_overlay{ 
+                    display: none; 
+                    position: absolute; 
+                    top: 0%; 
+                    left: 0%; 
+                    width: 100%; 
+                    height: 100%; 
+                    background-color: black; 
+                    z-index:1001; 
+                    -moz-opacity: 0.8; 
+                    opacity:.80; 
+                    filter: alpha(opacity=88); 
+                } 
+                .white_content { 
+                    display: none; 
+                    position: absolute; 
+                    top: 25%; 
+                    left: 25%; 
+                    width: 55%; 
+                    height: 55%; 
+                    padding: 20px; 
+                    border: 10px solid orange; 
+                    background-color: white; 
+                    z-index:1002; 
+                    overflow: auto; 
+                } 
+            </style> 
+            </head> 
+            <body> 
+                <p><a href = "JavaScript:void(0)" onclick = "openDialog()">システム使用方法</a></p> 
+                <div id="light" class="white_content">
+                    <table>
+                        <tr style="color:red font-size=20px">連絡方式を必ず記入しなさい</tr>
+                        <tr>
+                                
+                                
+                                    
+                                
+                                <td>中国語</td>  
+                            <td>注册 登陆<br> 
+                                购入系统 首先到自己账户页面。输入自己的地址，如果没有购买东西时候会默认なし，无法交换成功
+                                交换东西 平时可以提交自己已经不需要的物品等待别人的交换
+                                当想要交换别人的东西的时候，先提交自己这边想要和别人交换的东西，
+                                会出现物品号码，然后在交换大厅，别人的物品号码下面この商品を交換したい場合、自分の商品番号を入力して下さい:的位置输入自己物品的号码，
+                                这时被交换方的个人账户交換手続き会出现交换者的号码交换物品的信息
+                                如果想要交换的时候，被交换方点击确认，在交換完了界面可以看到，想交换的东西的信息交換相手の連絡方式を表示可以显示发起交换请求方的地址真实姓名和电话。
+                                </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>英語</td>
+                            <td>Registered landing
+                                
+                                    The purchase system first goes to its own account page. Enter your own address. If you don't buy something, you will default. You can't exchange it successfully.
+                                    
+                                    Exchanges can usually submit items that you don't need to wait for others to exchange.
+                                    
+                                    When you want to exchange other people's things, first submit what you want to exchange with others on your side.
+                                    
+                                    There will be the item number, and then in the exchange hall, under the item number of other people, enter the number of your own item in the exchange occasion, the item number of your own item, and the location of your own item.
+                                    
+                                    At this time, the exchanger's personal account will exchange the information of the exchanger's number exchange items.
+                                    
+                                    If you want to exchange, the exchanged party clicks to confirm that, after the exchange interface, you can see that the exchange of information for the exchange of things hand in hand. Connection means that the real name and telephone address of the originating exchange requester can be displayed.</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>日本語</td>
+                            <td>留学生はユーザーで登録したら、請求人は自分のほしいものを見つけた場合、
+                                    自分の請求をその人(ものの主人、その人は受ける方と呼ぶ)に発送する、
+                                    受ける方が請求を見る時に、もし交換を受けたい、確認を選んてから、請求人の商品とアドレス、
+                                    名前、電話が表示できるようになる。これで交換が完了しました。</td>
+                            
+                        </tr>
+                        <tr><img  width="201" height="146" src="img/1.jpg'"/></tr>
+                    </table> 
+                    <a href = "javascript:void(0)" onclick = "closeDialog()">閉じる</a>
+                </div> 
+                <div id="fade" class="black_overlay"></div> 
+            </body> 
+            <script type="text/javascript">
+                $(function(){
+                })
+                function openDialog(){
+                    document.getElementById('light').style.display='block';
+                    document.getElementById('fade').style.display='block'
+                }
+                function closeDialog(){
+                    document.getElementById('light').style.display='none';
+                    document.getElementById('fade').style.display='none'
+                }
+            </script>
+        </html>

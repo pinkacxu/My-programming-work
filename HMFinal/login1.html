@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Login1</title>
+<style>
+@font-face{
+font-family:fontjp;
+src:url('image/DFRULA5.TTF');}
+body{ font-family:fontjp;
+    background-size: cover;
+	text-align:center;
+    overflow:hidden;
+    background-attachment: fixed;
+    background:url(image/loginbg.jpg) no-repeat top center;
+    
+		}
+
+
+		
+		header{box-shadow:5px 2px 6px rgb(175, 224, 236);width:300px;height:100px;background: linear-gradient(45deg,rgb(138, 196, 204) 25%, rgb(199, 200, 206) 0, rgb(138, 196, 204) 50%,rgb(138, 196, 204) 0, rgb(199, 200, 206) 75%, rgb(199, 200, 206) 0);text-align:center;
+            margin:50px auto;vertical-align: middle;font:italic bold 20px arial,sans-serif;
+	border-radius: 15px;}
+		           
+		
+		section{box-shadow:5px 2px 6px #000;width:300px;height:300px;background-color: #dad8c5;text-align:center;
+			background-color: #d0d2d3;border:  solid hsla(0,0%,100%,.5);margin:120px auto;;
+		}
+		footer{box-shadow:5px 2px 6px #000;height: 10%;width:400px;background-color: #b9b57c;text-align:center;
+			;background-color: #6459a1;margin:120px auto;font:italic bold 20px arial,sans-serif;
+	border-radius: 15px;}
+</style>
+
+</head>
+
+
+ 
+<body>
+       
+    <header><br>ログインしてください</header>
+    <section>
+	<form method="POST" action="jhcheck.php">
+    <input  name="userID" type="text" style="margin-top:30px; border-top-left-radius:5px;border-top-right-radius:5px;" placeholder="userID"/><br>
+    <input  name="password" type="password" style="margin-top:0; border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-top:1px solid #ccc"placeholder="password"/><br><br>
+    <input  type="submit" name="submit" value="ログイン"/>
+    
+</form>
+    <button type="button" onclick="location.href='register.html'" >新ADMIN登録</button>
+        </section>
+    <footer>
+            <form name=fm>
+                    現時間 　<input  type="text"  size=50  name="a">
+            </form>
+        </footer>
+ 
+
+</body>
+<script type="text/javascript">
+
+
+
+ 
+
+
+    clock();    
+   function clock(){
+    today = new Date(); 
+    fm.a.value=today.toTimeString();
+    setTimeout("clock()",1000);
+   } 
+    
+   
+   </script>
+</html>
